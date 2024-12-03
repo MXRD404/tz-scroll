@@ -1,14 +1,14 @@
 <div class="page">
   <div class="page-content">
-    <div [ngClass]="isFirstBorder() ? 'borderActive' : ''" class="scroll">
+    <div [class.borderActive]="currentBorder.value === 1" class="scroll">
       <div class="scroll_content">
-        <span appInViewport (visible)="onVisibleFirstScroll($event)">Hello</span>
+        <span appInViewport (visible)="onVisibleScroll(1, $event)">Hello</span>
       </div>
     </div>
     <span>Счетчик: {{ counter() }}</span>
-    <div [ngClass]="isSecondBorder() ? 'borderActive' : ''" class="scroll">
+    <div [class.borderActive]="secondBorderVisible" class="scroll">
       <div class="scroll_content">
-        <span appInViewport (visible)="onVisibleSecondScroll($event)">Hello</span>
+        <span appInViewport (visible)="onVisibleScroll(2, $event)">Hello</span>
       </div>
     </div>
   </div>
