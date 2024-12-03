@@ -1,6 +1,7 @@
-import { Component, ElementRef, EventEmitter, Output, signal } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, Output, signal } from '@angular/core';
 import { InViewportDirective } from './viewport.directive';
 import { NgClass, NgStyle } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   isFirstBorder = signal(false)
   isSecondBorder = signal(false)
   counter = signal<number>(0)
+
 
   constructor() { }
 

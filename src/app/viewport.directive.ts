@@ -4,6 +4,7 @@ import { Directive, ElementRef, EventEmitter, Input, Output } from '@angular/cor
   selector: '[appInViewport]',
   standalone: true
 })
+
 export class InViewportDirective {
   @Output() visible = new EventEmitter<boolean>();
   private observer: IntersectionObserver;
